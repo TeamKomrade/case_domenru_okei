@@ -374,3 +374,4 @@ C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\CaseDomenru\obj\
 C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\CaseDomenru\obj\Debug\netcoreapp3.1\CaseDomenru.pdb
 C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\CaseDomenru\obj\Debug\netcoreapp3.1\CaseDomenru.genruntimeconfig.cache
 C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\CaseDomenru\obj\Debug\netcoreapp3.1\Razor\Views\Home\Validate.cshtml.g.cs
+C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\CaseDomenru\bin\Debug\netcoreapp3.1\UpperDomainNames.txt

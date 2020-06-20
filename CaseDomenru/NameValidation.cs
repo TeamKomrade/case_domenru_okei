@@ -1,35 +1,36 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Text;
+using Microsoft.AspNetCore.Mvc.TagHelpers;
+using System.IO;
 
 namespace CaseDomenru
 {
     public static class NameValidation
     {
-        //Encoding Uni = Encoding.Unicode;
-        //
+        public static List<string> Domains { get; set; }
+        public static IdnMapping idn = new IdnMapping();
         public static bool ValidateEmail(string email)
         {
             string tmp_email = email;
-            //1. делим вход, проверяем, является ли входная строка эл. почтой (правильной или нет)
-            //if (tmp_email.Contains("(") tmp_email = tmp_email.S
+            if (!email.Contains('@')) return false;
             string[] content = email.Split('@');
-            if (!email.Contains('@') || content.Length > 2) return false;
-            if (!content[0].Any(x => x > 21)) return false;
-            //2. подтверждаем домен
+            if (content.Length > 2 && !content[0].Any(x => x > 21)) return false;
             return ValidateDomain(content[1]);
         }
 
         public static bool ValidateDomain(string domain)
         {
-            //1. проверяем, является
+            if (domain.Length > 255) return false;
             string[] content = domain.Split('.');
             if (content.Length < 2) return false;
-            
-            return (content[0].Length > 0) && (content[1].Length > 0);
+            foreach (string tmp_domain in content)  if (tmp_domain.Length == 0) return false;
+            foreach (string domainTocheck in Domains) if (domainTocheck.ToLower() == idn.GetAscii(content[^1].ToLower())) return true;
+            return false;
         }
     }
 }

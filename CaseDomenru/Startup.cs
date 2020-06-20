@@ -12,6 +12,9 @@ using CaseDomenru.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.IO;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using System.Reflection;
 
 namespace CaseDomenru
 {
@@ -65,6 +68,16 @@ namespace CaseDomenru
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+            List<string> DomainsFromFile = new List<string>();
+            string domain = "";
+            using (StreamReader txt = new StreamReader(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\UpperDomainNames.txt"))
+            {
+                while ((domain = txt.ReadLine()) != null)
+                {
+                    DomainsFromFile.Add(domain);
+                }
+            }
+            NameValidation.Domains = DomainsFromFile;
         }
     }
 }
