@@ -11,7 +11,9 @@ namespace ValidationTests
         {
             "юн#не.7659679ймд1@тестовая-зона.рф",
             "unna.95679med1@тестовая-зона.рф",
-            "почта@домен.ру"
+            "почта@домен.ru",
+            "(..)text@дом.рф",
+            "(text)..@фе.рф"
         };
 
         string[] emails_fail = new string[]
@@ -20,10 +22,14 @@ namespace ValidationTests
             "unn@668med1@тестовая-зона.рф",
             "почта@рф",
             "почта@",
+            "..@..",
+            "..@.ru",
+            "(..)..@рф.рф",
+            "(text)..@.рф"
         };
 
         [TestMethod]
-        public void EmailSimple()
+        public void EmailPassSimple()
         {
             foreach (string email in emails)
             {

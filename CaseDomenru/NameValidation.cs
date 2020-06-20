@@ -19,6 +19,14 @@ namespace CaseDomenru
             string tmp_email = email;
             if (!email.Contains('@')) return false;
             string[] content = email.Split('@');
+            while (content[0].Contains('(') 
+                && content[0].Contains(')'))
+            {
+                int index = content[0].IndexOf('(');
+                int length = content[0].IndexOf(')') - index;
+                content[0] = content[0].Remove(index, length);
+            }
+            if (content[0].Contains("..")) return false;
             if (content.Length > 2 && !content[0].Any(x => x > 21)) return false;
             return ValidateDomain(content[1]);
         }

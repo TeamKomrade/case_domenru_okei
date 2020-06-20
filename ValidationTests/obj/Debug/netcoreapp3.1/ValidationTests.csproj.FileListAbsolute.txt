@@ -434,3 +434,4 @@ C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\ValidationTests\
 C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\ValidationTests\obj\Debug\netcoreapp3.1\ValidationTests.dll
 C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\ValidationTests\obj\Debug\netcoreapp3.1\ValidationTests.pdb
 C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\ValidationTests\obj\Debug\netcoreapp3.1\ValidationTests.genruntimeconfig.cache
+C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\ValidationTests\bin\Debug\netcoreapp3.1\UpperDomainNames.txt
