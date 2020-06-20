@@ -20,12 +20,23 @@ namespace CaseDomenru.Controllers
 
         public IActionResult Index()
         {
+            return RedirectToAction("Validate", "Home");
+        }
+
+        public IActionResult Validate()
+        {
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult Validate(ValidationModel model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                model.isValidEmail = NameValidation.ValidateEmail(model.Input);
+                return View(model);
+            }
+            else return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

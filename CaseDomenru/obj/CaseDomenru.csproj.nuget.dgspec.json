@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TeamKomrade\\source\\repos\\TeamKomrade\\case_domenru_okei\\CaseDomenru\\CaseDomenru.csproj": {}
+    "C:\\Users\\TeamKomrade\\Source\\Repos\\TeamKomrade\\case_domenru_okei\\CaseDomenru\\CaseDomenru.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TeamKomrade\\source\\repos\\TeamKomrade\\case_domenru_okei\\CaseDomenru\\CaseDomenru.csproj": {
+    "C:\\Users\\TeamKomrade\\Source\\Repos\\TeamKomrade\\case_domenru_okei\\CaseDomenru\\CaseDomenru.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TeamKomrade\\source\\repos\\TeamKomrade\\case_domenru_okei\\CaseDomenru\\CaseDomenru.csproj",
+        "projectUniqueName": "C:\\Users\\TeamKomrade\\Source\\Repos\\TeamKomrade\\case_domenru_okei\\CaseDomenru\\CaseDomenru.csproj",
         "projectName": "CaseDomenru",
-        "projectPath": "C:\\Users\\TeamKomrade\\source\\repos\\TeamKomrade\\case_domenru_okei\\CaseDomenru\\CaseDomenru.csproj",
+        "projectPath": "C:\\Users\\TeamKomrade\\Source\\Repos\\TeamKomrade\\case_domenru_okei\\CaseDomenru\\CaseDomenru.csproj",
         "packagesPath": "C:\\Users\\TeamKomrade\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TeamKomrade\\source\\repos\\TeamKomrade\\case_domenru_okei\\CaseDomenru\\obj\\",
+        "outputPath": "C:\\Users\\TeamKomrade\\Source\\Repos\\TeamKomrade\\case_domenru_okei\\CaseDomenru\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

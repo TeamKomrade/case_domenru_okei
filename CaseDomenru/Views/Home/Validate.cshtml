@@ -1,0 +1,25 @@
+﻿@model ValidationModel
+
+<form asp-antiforgery="true" asp-action="Validate" asp-controller="Home">
+    @if (Model != null && Model.isValidEmail.HasValue)
+    {
+        string validationText = "Почтовый адрес не прошёл валидацию";
+        if ((bool)Model.isValidEmail) validationText = "Почтовый адрес прошёл проверку";
+    <div class="valid-@Model.isValidEmail">@validationText</div>
+    }
+    <div>
+        <label>Почта для проверки</label>
+        <input type="text" asp-for="Input" />
+        <span asp-validation-for="Input"/>
+    </div>
+    <div>
+        <input type="submit" />
+    </div>
+    <div class="validation" asp-validation-summary="ModelOnly" />
+</form>
+
+@section scripts{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

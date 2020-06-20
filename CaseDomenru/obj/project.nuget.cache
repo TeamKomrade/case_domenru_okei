@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nTT5EVdjRpiKsKucm9DeGS1yamUjoU1DGMkcs0YhO8YDrZLCiyJ9RKWcLrjrSBh1N+ALJSv0DNnWX2I326TPaA==",
+  "dgSpecHash": "eVTb8SXuNtn6N1bSv8R7xW7FsAS3QHSGUNbObwnUebvTVTasYiG+tfVIqwzzpO7hme+aocVqUiBJ/ZBRg5dsgg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\TeamKomrade\\source\\repos\\TeamKomrade\\case_domenru_okei\\CaseDomenru\\CaseDomenru.csproj",
+  "projectFilePath": "C:\\Users\\TeamKomrade\\Source\\Repos\\TeamKomrade\\case_domenru_okei\\CaseDomenru\\CaseDomenru.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TeamKomrade\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.4\\microsoft.aspnetcore.cryptography.internal.3.1.4.nupkg.sha512",
     "C:\\Users\\TeamKomrade\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.4\\microsoft.aspnetcore.cryptography.keyderivation.3.1.4.nupkg.sha512",
