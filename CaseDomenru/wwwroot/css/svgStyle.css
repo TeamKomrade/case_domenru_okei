@@ -1,0 +1,6 @@
+.icon:hover path{
+	stroke: #E7A956;
+}
+.icon:hover .tod{
+	fill: #E7A956;
+}

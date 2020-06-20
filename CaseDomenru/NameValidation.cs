@@ -16,7 +16,7 @@ namespace CaseDomenru
         public static IdnMapping idn = new IdnMapping();
         public static bool ValidateEmail(string email)
         {
-            string tmp_email = email;
+            string tmp_email = idn.GetAscii(email);
             if (!email.Contains('@')) return false;
             string[] content = email.Split('@');
             while (content[0].Contains('(') 

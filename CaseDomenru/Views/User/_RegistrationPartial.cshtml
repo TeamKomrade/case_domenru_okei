@@ -1,0 +1,26 @@
+﻿@model RegistrationModel
+
+    <div class="regBlock">
+        <h1>Регистрация</h1>
+        <form asp-controller="User" asp-action="Register" asp-anti-forgery="true">
+            <table>
+                <tr>
+                    <td><label asp-for="Email" /></td>
+                    <td><input asp-for="Email" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="Password" /></td>
+                    <td><input asp-for="Password" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="UniqueKey" /></td>
+                    <td><input asp-for="UniqueKey" /></td>
+                </tr>
+            </table>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -15,6 +15,8 @@ using Microsoft.Extensions.Hosting;
 using System.IO;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using System.Reflection;
+using System.Net.Mail;
+using System.Net;
 
 namespace CaseDomenru
 {
@@ -79,6 +81,8 @@ namespace CaseDomenru
                 }
             }
             NameValidation.Domains = DomainsFromFile;
+
+           
         }
     }
 }
