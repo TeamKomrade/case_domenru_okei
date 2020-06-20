@@ -70,7 +70,8 @@ namespace CaseDomenru
             });
             List<string> DomainsFromFile = new List<string>();
             string domain = "";
-            using (StreamReader txt = new StreamReader(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\UpperDomainNames.txt"))
+            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "UpperDomainNames.txt");
+            using (StreamReader txt = new StreamReader(path))
             {
                 while ((domain = txt.ReadLine()) != null)
                 {
