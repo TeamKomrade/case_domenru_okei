@@ -15,9 +15,11 @@ namespace CaseDomenru.Models
     public class LoginModel
     {
         [Required]
+        [Display(Name = "Почта")]
         [StringLength(255, MinimumLength = 5)]
         public string Email { get; set; }
         [Required]
+        [Display(Name = "Пароль")]
         [StringLength(255, MinimumLength = 5)]
         public string Password { get; set; }
         
@@ -26,12 +28,15 @@ namespace CaseDomenru.Models
     public class RegistrationModel
     {
         [Required]
+        [Display(Name = "Почта")]
         [StringLength(255, MinimumLength = 5)]
         public string Email { get; set; }
         [Required]
+        [Display(Name = "Пароль")]
         [StringLength(255, MinimumLength = 5)]
         public string Password { get; set; }
         [Required]
+        [Display(Name = "Уникальный код")]
         [StringLength(255, MinimumLength = 5)]
         public string UniqueKey { get; set; }
     }
