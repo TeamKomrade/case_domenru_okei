@@ -375,8 +375,6 @@ C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\CaseDomenru\obj\
 C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\CaseDomenru\obj\Debug\netcoreapp3.1\CaseDomenru.genruntimeconfig.cache
 C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\CaseDomenru\obj\Debug\netcoreapp3.1\Razor\Views\Home\Validate.cshtml.g.cs
 C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\CaseDomenru\bin\Debug\netcoreapp3.1\UpperDomainNames.txt
-C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\CaseDomenru\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index_old.cshtml.g.cs
-C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\CaseDomenru\obj\Debug\netcoreapp3.1\Razor\Views\User\Authorization.cshtml.g.cs
-C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\CaseDomenru\obj\Debug\netcoreapp3.1\Razor\Views\User\_LoginPartial.cshtml.g.cs
-C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\CaseDomenru\obj\Debug\netcoreapp3.1\Razor\Views\User\_RegistrationPartial.cshtml.g.cs
 C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\CaseDomenru\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs
+C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\CaseDomenru\obj\Debug\netcoreapp3.1\Razor\Views\User\Login.cshtml.g.cs
+C:\Users\TeamKomrade\Source\Repos\TeamKomrade\case_domenru_okei\CaseDomenru\obj\Debug\netcoreapp3.1\Razor\Views\User\Registration.cshtml.g.cs

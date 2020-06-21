@@ -1,0 +1,31 @@
+﻿@model LoginModel
+    <link rel="stylesheet" href="~/css/style.css">
+
+    <div class="containerAR">
+        <div class="authBlock">
+            <h1>Авторизация</h1>
+            <div class="validation" asp-validation-summary="ModelOnly"></div>
+            <form asp-controller="User" asp-action="Login" asp-anti-forgery="true">
+                <table>
+                    <tr>
+                        <td><label asp-for="Email"></label></td>
+                        <td><input asp-for="Email" /></td>
+                        <td><span asp-validation-for="Email" class="text-danger"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label asp-for="Password"></label></td>
+                        <td><input asp-for="Password" /></td>
+                        <td><span asp-validation-for="Password" class="text-danger"></span></td>
+                    </tr>
+                </table>
+                <button type="submit">Войти</button>
+            </form>
+            <h3>Вы ещё не зарегистрированы?</h3>
+            <a asp-controller="User" asp-action="Registration" class="button">Зарегистрироваться</a>
+            <a asp-controller="Home" asp-action="Index" class="button">На главную страницу</a>
+        </div>
+    </div>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }

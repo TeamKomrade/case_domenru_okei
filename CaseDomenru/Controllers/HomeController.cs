@@ -16,13 +16,10 @@ namespace CaseDomenru.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private CaseDomenruDB db;
-        public HomeController(CaseDomenruDB dbcontext)
-        {
-            db = dbcontext;
-        }
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, CaseDomenruDB dbcontext)
         {
             _logger = logger;
+            db = dbcontext;
         }
 
         public IActionResult Index()
@@ -42,25 +39,7 @@ namespace CaseDomenru.Controllers
             {
                 model.isValidEmail = NameValidation.ValidateEmail(model.Input);
                 return View(model);
-                MailAddress from = new MailAddress("unnamed2@тестовая-зона.рф");
-                MailAddress to = new MailAddress(model.Input);
-
-                MailMessage message = new MailMessage(from, to);
-                message.Subject = "тестовое письмо от " + DateTime.Now;
-                message.Body = "<div><b>Ваши оценки:</b></div>" +
-                    "<p>" +
-                    "<table> " +
-                    "<b><tr><td>Предмет</td><td>I ч.</td><td>II ч.</td><td>III ч.</td><td>IV ч.</td><td>Итог</td><b><tr/>" +
-                    "<tr><td>Русский язык</td><td>5</td><td>4</td><td>2</td><td>2</td><td>3</td><tr/>" +
-                    "<tr><td>Математика</td><td>5.</td><td>4</td><td>5</td><td>5</td><td>5</td><tr/>" +
-                    "</table>" +
-                    "</p>";
-                message.IsBodyHtml = true;
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-                smtp.Credentials = new NetworkCredential("test.maeeil12345.6789.0.123456789.0@gmail.com", "bfd20380a6");
-                smtp.EnableSsl = true;
-                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtp.Send(message);
+                
                 return View(model);
             }
             else return View(model);

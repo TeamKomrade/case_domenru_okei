@@ -19,6 +19,7 @@ namespace CaseDomenru.Models
         [StringLength(255, MinimumLength = 5)]
         public string Email { get; set; }
         [Required]
+        [DataType(DataType.Password)]
         [Display(Name = "Пароль")]
         [StringLength(255, MinimumLength = 5)]
         public string Password { get; set; }
@@ -32,10 +33,10 @@ namespace CaseDomenru.Models
         [StringLength(255, MinimumLength = 5)]
         public string Email { get; set; }
         [Required]
+        [DataType(DataType.Password)]
         [Display(Name = "Пароль")]
         [StringLength(255, MinimumLength = 5)]
         public string Password { get; set; }
-        [Required]
         [Display(Name = "Уникальный код")]
         [StringLength(255, MinimumLength = 5)]
         public string UniqueKey { get; set; }

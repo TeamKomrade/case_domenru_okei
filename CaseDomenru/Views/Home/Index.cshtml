@@ -15,12 +15,11 @@
 		<a href="#home">ИТ-ДНЕВНИК</a>
 	</div>
 	<nav>
-		@*<ul class="menu">
-			<li><a asp-controller="Home" asp-action="About">О нас</a></li>
-			<li><a asp-controller="Home" asp-action="About">Партнёрам</a></li>
-			<li><a asp-controller="Home" asp-action="About">Контакты</a></li>
-			<li><a asp-controller="User" asp-action="Authorization">Авторизоваться</a></li>
-		</ul>*@
+		<ul class="menu">
+			<li><a asp-controller="User" asp-action="Index">Личный кабинет</a></li>
+			<li><a asp-controller="User" asp-action="Registration">Зарегистрироваться</a></li>
+			<li><a asp-controller="User" asp-action="Login">Войти</a></li>
+		</ul>
 	</nav>
 </header>
 <section>
@@ -32,9 +31,6 @@
 			<a class="button">Присоединиться</a>
 			</div>
 		</div>
-	</div>
-	<div id="second-page">
-
 	</div>
 </section>
 <footer></footer>

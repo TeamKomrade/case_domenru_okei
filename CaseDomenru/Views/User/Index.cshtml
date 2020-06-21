@@ -16,27 +16,27 @@
 	<meta name="viewport" content="width-device-width, initial-scale=1.0">
 	<meta htttp-equiv="X-UA-Compatible" content="IE=edge">
 	<title>ИТ-ДНЕВНИК</title>
-	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="~/css/style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
 </head>
 <body>
 <header style="	justify-content: space-between;">
 		<i style="font-size: 36px; color: #7E8EFF; align-self: center;">Личный кабинет</i>
-		<div class="logImg" style="background-image: url(img/logo.svg);"></div>
-		<a href="index.html" class="button">Главная</a>
+		<div class="logImg" style="background-image: url(~/img/logo.svg);"></div>
+        <a asp-controller="Home" asp-action="Index" class="button">На главную страницу</a>
 </header>
 <div class="forms">
 	<div>
 		<div class="profile">
-			<div class="avatar" style="background-image: url(img/logo.svg);"></div>
+			<div class="avatar" style="background-image: url(~/img/logo.svg);"></div>
 				<div class="info">
                     <h1 id="FIO">@person.LastName @person.FirstName @person.Patronymic</h1><p>
 					<h2 id="chclass">Роль: @role</h2><p>
-					<h2 id="date">Дата рождения: </h2><p>
+					<h2 id="date">Дата рождения: @person.DateOfBirth.ToShortDateString()</h2><p>
 				</div>
 		</div>
 		<h1 id="emailTo">@NameValidation.idn.GetUnicode(Model.User.Email)</h1>
-		<a asp-controller="Home" asp-action="Index" class="button">Выйти</a>
+		<a asp-controller="User" asp-action="Login" class="button">Вход (другой пользователь)</a>
 	</div>
 </div>
 <script src="js/script.js"></script>

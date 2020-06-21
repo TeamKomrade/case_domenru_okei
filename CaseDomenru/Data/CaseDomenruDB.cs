@@ -31,6 +31,7 @@ namespace CaseDomenru.Data
                         DateOfBirth = DateTime.Now.AddYears(-33)
                     }
                 });
+                SaveChanges();
             };
         }
 
