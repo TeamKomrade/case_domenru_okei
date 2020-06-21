@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CaseDomenru.Models;
+using System.Net.Mail;
+using System.Net;
+using CaseDomenru.Data;
 
 namespace CaseDomenru.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private CaseDomenruDB db;
+        public HomeController(ILogger<HomeController> logger, CaseDomenruDB dbcontext)
         {
             _logger = logger;
+            db = dbcontext;
         }
 
         public IActionResult Index()
         {
-            return RedirectToAction("Validate", "Home");
+            return View();
         }
 
         public IActionResult Validate()

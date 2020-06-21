@@ -1,8 +1,40 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<meta htttp-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ИТ-ДНЕВНИК</title>
+	<link rel="stylesheet" href="~/css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+</head>
+<body>
+<header>
+	<div id="logo">
+		<div class="logImg" style="background-image: url(img/logo.svg);"></div>
+		<a href="#home">ИТ-ДНЕВНИК</a>
+	</div>
+	<nav>
+        <ul class="menu">
+            <li><a class="button" asp-controller="Home" asp-action="Validate">Проверить адрес почты</a></li>
+            <li><a class="button" asp-controller="User" asp-action="Index">Личный кабинет</a></li>
+            <li><a class="button" asp-controller="User" asp-action="Registration">Зарегистрироваться</a></li>
+            <li><a class="button" asp-controller="User" asp-action="Login">Войти</a></li>
+        </ul>
+	</nav>
+</header>
+<section>
+	<div id="first-page" style="background-image: url(img/1pg/stripes.png);">
+		<div class="container">
+			<div class="main-block">
+			<h1>Современная <span class="blueSpan">образовательныая платформа</span></h1>
+			<h3>ИТ-дневник - это современная образовательная платформа, которая создана что бы легко управлять вашим дневником, сэкономит вам время и деньги.</h3>
+            <a class="button" asp-controller="User" asp-action="Registration">Присоединиться</a>
+			</div>
+		</div>
+	</div>
+</section>
+<footer></footer>
+<script src="js/script.js"></script>
+</body>
+</html>

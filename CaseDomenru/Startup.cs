@@ -15,6 +15,9 @@ using Microsoft.Extensions.Hosting;
 using System.IO;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using System.Reflection;
+using System.Net.Mail;
+using System.Net;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace CaseDomenru
 {
@@ -30,11 +33,15 @@ namespace CaseDomenru
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<CaseDomenruDB>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/User/Login");
+                    options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/User/Login");
+                });
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
@@ -57,6 +64,10 @@ namespace CaseDomenru
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseCookiePolicy(new CookiePolicyOptions()
+            {
+                MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.Strict
+            });
 
             app.UseAuthentication();
             app.UseAuthorization();
@@ -68,6 +79,7 @@ namespace CaseDomenru
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
             List<string> DomainsFromFile = new List<string>();
             string domain = "";
             string path = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "UpperDomainNames.txt");
@@ -79,6 +91,8 @@ namespace CaseDomenru
                 }
             }
             NameValidation.Domains = DomainsFromFile;
+
+           
         }
     }
 }
