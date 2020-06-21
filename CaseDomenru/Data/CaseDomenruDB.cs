@@ -6,11 +6,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CaseDomenru.Data
 {
+# region контекст базы данных
     public class CaseDomenruDB : DbContext
     {
         public CaseDomenruDB(DbContextOptions<CaseDomenruDB> options)
             : base(options)
         {
+            //создаём тестового пользователя
             if (Database.EnsureCreated())
             {
                 Users.Add(new User()
@@ -40,6 +42,7 @@ namespace CaseDomenru.Data
         public DbSet<UniqueKey> UniqueCodes { get; set; }
     }
 
+    //Пользователь
     public class User
     {
         public int UserID { get; set; }
@@ -53,8 +56,7 @@ namespace CaseDomenru.Data
         public Roles Role { get; set; }
     }
 
-
-
+    //личные данные пользователя
     public class Person
     {
         [ForeignKey("User")]
@@ -70,6 +72,7 @@ namespace CaseDomenru.Data
         
     }
 
+    //роли
     public enum Roles
     {
         Ученик,
@@ -77,6 +80,7 @@ namespace CaseDomenru.Data
         Преподаватель
     }
 
+    //уникальный ключ
     public class UniqueKey
     {
         public int UniqueKeyID { get; set; }
@@ -86,4 +90,5 @@ namespace CaseDomenru.Data
         public int KeyCreatorID { get; set; }
         public virtual User User { get; set; }
     }
+    #endregion
 }

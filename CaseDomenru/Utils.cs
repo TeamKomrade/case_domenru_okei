@@ -9,6 +9,7 @@ namespace CaseDomenru
 {
     public static class Utils
     {
+        //хеширование по алогритму SHA512
         static HashAlgorithm HAlg = SHA512.Create();
         public static string GetHash(string input)
         {

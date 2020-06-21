@@ -12,6 +12,7 @@ using CaseDomenru.Data;
 
 namespace CaseDomenru.Controllers
 {
+    #region Контроллер отвечает за главную страницу и страницу валидации почтового адреса
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -49,4 +50,5 @@ namespace CaseDomenru.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+    #endregion
 }

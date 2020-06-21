@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace CaseDomenru.Models
 {
-    public class AuthorizationModel
-    {
-        public LoginModel LoginModel { get; set; }
-        public RegistrationModel RegistrationModel { get; set; }
-    }
-
+    //модели проверки входа и регистрации
     public class LoginModel
     {
         [Required]

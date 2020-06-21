@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace CaseDomenru.Models
 {
+    //модель для валидации почты
     public class ValidationModel
     {
         [Required]

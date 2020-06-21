@@ -36,6 +36,7 @@ namespace CaseDomenru
             services.AddDbContext<CaseDomenruDB>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            //политика аутентификации с использованием куки
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
                 {
@@ -64,6 +65,7 @@ namespace CaseDomenru
             app.UseStaticFiles();
 
             app.UseRouting();
+            //
             app.UseCookiePolicy(new CookiePolicyOptions()
             {
                 MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.Strict
@@ -80,6 +82,7 @@ namespace CaseDomenru
                 endpoints.MapRazorPages();
             });
 
+            //загрузка списка доменов из локального файла
             List<string> DomainsFromFile = new List<string>();
             string domain = "";
             string path = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "UpperDomainNames.txt");
