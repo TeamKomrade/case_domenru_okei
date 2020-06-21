@@ -39,8 +39,6 @@ namespace CaseDomenru.Controllers
             {
                 model.isValidEmail = NameValidation.ValidateEmail(model.Input);
                 return View(model);
-                
-                return View(model);
             }
             else return View(model);
         }

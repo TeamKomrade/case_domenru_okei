@@ -76,6 +76,7 @@ header a:hover{
 .button{
 	font-weight: 500;/*Medium*/
 	font-size: 18px;
+	margin: 1%;
 	background: #7E8EFF;
 	color: #ffff;
 	text-decoration: none;
@@ -152,7 +153,8 @@ footer{
 }
 
 .containerAR{
-	width: 442px;
+	padding: 15%;
+	width: auto;
 	height: auto;
 	display: flex;
 	flex-direction: column;

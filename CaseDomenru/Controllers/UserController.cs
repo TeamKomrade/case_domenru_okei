@@ -32,7 +32,7 @@ namespace CaseDomenru.Controllers
                 UVM.User = db.Users.Where(u => u.Login == email).Include(u => u.Person).Include(u => u.UniqueCode).FirstOrDefault();
                 return View(UVM);
             } 
-            else return RedirectToAction("Index", "Home");
+            else return RedirectToAction("Login", "User");
         }
 
         public IActionResult Authorization()
@@ -62,6 +62,12 @@ namespace CaseDomenru.Controllers
                 }
             }
             return RedirectToAction("Login", model);
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login", "User");
         }
 
         public IActionResult Registration()
