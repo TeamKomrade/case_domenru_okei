@@ -29,11 +29,15 @@
 	<div>
 		<div class="profile">
 			<div class="avatar" style="background-image: url(~/img/logo.svg);"></div>
-				<div class="info">
-                    <h1 id="FIO">@person.LastName @person.FirstName @person.Patronymic</h1><p>
-					<h2 id="chclass">Роль: @role</h2><p>
-					<h2 id="date">Дата рождения: @person.DateOfBirth.ToShortDateString()</h2><p>
-				</div>
+            <div class="info">
+                <h1 id="FIO">@person.LastName @person.FirstName @person.Patronymic</h1><p>
+                    <h2 id="chclass">Роль: @role</h2>
+                <p>
+                    <h2 id="date">Дата рождения: @person.DateOfBirth.ToShortDateString()</h2>
+                <p>
+                    @*<h2 id="date" style="max-width: 200px; text-wrap:normal">Уникальный ключ: @Model.User.UniqueCode.UniqueKeyString</h2>*@
+                <p>
+            </div>
 		</div>
 		<h1 id="emailTo">@NameValidation.idn.GetUnicode(Model.User.Email)</h1>
 		<a asp-controller="User" asp-action="Logout" class="button">Выйти из личного кабинета</a>

@@ -16,10 +16,10 @@
 	</div>
 	<nav>
         <ul class="menu">
-            <li><a asp-controller="Home" asp-action="Validate">Проверить адрес почты</a></li>
-            <li><a asp-controller="User" asp-action="Index">Личный кабинет</a></li>
-            <li><a asp-controller="User" asp-action="Registration">Зарегистрироваться</a></li>
-            <li><a asp-controller="User" asp-action="Login">Войти</a></li>
+            <li><a class="button" asp-controller="Home" asp-action="Validate">Проверить адрес почты</a></li>
+            <li><a class="button" asp-controller="User" asp-action="Index">Личный кабинет</a></li>
+            <li><a class="button" asp-controller="User" asp-action="Registration">Зарегистрироваться</a></li>
+            <li><a class="button" asp-controller="User" asp-action="Login">Войти</a></li>
         </ul>
 	</nav>
 </header>
@@ -29,7 +29,7 @@
 			<div class="main-block">
 			<h1>Современная <span class="blueSpan">образовательныая платформа</span></h1>
 			<h3>ИТ-дневник - это современная образовательная платформа, которая создана что бы легко управлять вашим дневником, сэкономит вам время и деньги.</h3>
-			<a class="button">Присоединиться</a>
+            <a class="button" asp-controller="User" asp-action="Registration">Присоединиться</a>
 			</div>
 		</div>
 	</div>

@@ -80,6 +80,7 @@ header a:hover{
 	background: #7E8EFF;
 	color: #ffff;
 	text-decoration: none;
+	text-align: center;
 	white-space: nowrap;
 	cursor: pointer;
 	border-radius: 10px;

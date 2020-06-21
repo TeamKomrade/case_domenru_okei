@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CaseDomenru.Controllers
 {
+    #region Отвечает за регистрацию, авторизацию и личный кабинет
     public class UserController : Controller
     {
         private CaseDomenruDB db;
@@ -22,6 +23,7 @@ namespace CaseDomenru.Controllers
             db = dbcontext;
         }
 
+        //Личный кабинет
         public IActionResult Index()
         {
             string email;
@@ -35,11 +37,7 @@ namespace CaseDomenru.Controllers
             else return RedirectToAction("Login", "User");
         }
 
-        public IActionResult Authorization()
-        {
-            return RedirectToAction("Login");
-        }
-
+        //Представление входа
         public IActionResult Login()
         {
             return View();
@@ -64,27 +62,34 @@ namespace CaseDomenru.Controllers
             return RedirectToAction("Login", model);
         }
 
+        //Выход из аккаунта
+        [HttpPost]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login", "User");
         }
 
+        //Представление регистрации
         public IActionResult Registration()
         {
             return View();
         }
 
+        //Регистрация, метод post
         [HttpPost]
         public IActionResult Registration(Models.RegistrationModel model)
         {
+            //Проверка правильности переданной модели
             if (ModelState.IsValid)
             {
+                //проверка эл. ящика
                 if (!NameValidation.ValidateEmail(model.Email))
                 {
                     ModelState.AddModelError("", "Введённый почтовый адрес не прошёл валидацию.");
                     return RedirectToAction("Registration", model);
                 }
+                //добавление пользователя в бд
                 db.Users.Add(new Data.User()
                 {
                     Email = NameValidation.idn.GetAscii(model.Email),
@@ -104,6 +109,7 @@ namespace CaseDomenru.Controllers
                     }
                 });
                 db.SaveChanges();
+                //отправка письма
                 MailAddress from = new MailAddress("unnamed2@тестовая-зона.рф");
                 MailAddress to = new MailAddress(model.Email);
 
@@ -111,17 +117,21 @@ namespace CaseDomenru.Controllers
                 message.Subject = "Благодарим за регистрацию на сайте ИТ-Дневник!" + DateTime.Now;
                 message.Body = $"Вы зарегистрировались по уникальному ключу {model.UniqueKey}" ;
                 message.IsBodyHtml = true;
+                //настройка smtp-клиента
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+                //пока что используется аккаунт почты гугла
                 smtp.Credentials = new NetworkCredential("test.maeeil12345.6789.0.123456789.0@gmail.com", "bfd20380a6");
                 smtp.EnableSsl = true;
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Send(message);
+                //вход под пользователем
                 Authenticate(model.Email, model.Password);
                 return RedirectToAction("Index");
             }
             return RedirectToAction("Registration", model);
         }
 
+        //Аутентификация на основе 
         public void Authenticate(string email, string password)
         {
             var claims = new List<Claim>
@@ -132,4 +142,5 @@ namespace CaseDomenru.Controllers
             HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
     }
+    #endregion
 }
