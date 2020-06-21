@@ -8,13 +8,18 @@ using Microsoft.Extensions.Logging;
 using CaseDomenru.Models;
 using System.Net.Mail;
 using System.Net;
+using CaseDomenru.Data;
 
 namespace CaseDomenru.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        private CaseDomenruDB db;
+        public HomeController(CaseDomenruDB dbcontext)
+        {
+            db = dbcontext;
+        }
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -36,7 +41,7 @@ namespace CaseDomenru.Controllers
             if (ModelState.IsValid)
             {
                 model.isValidEmail = NameValidation.ValidateEmail(model.Input);
-                if (!(bool)model.isValidEmail) return View(model);
+                return View(model);
                 MailAddress from = new MailAddress("unnamed2@тестовая-зона.рф");
                 MailAddress to = new MailAddress(model.Input);
 

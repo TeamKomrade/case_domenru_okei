@@ -1,3 +1,14 @@
+﻿@model UserViewModel
+@{
+    CaseDomenru.Data.Person person = Model.User.Person;
+    string role = "";
+    switch (Model.User.Role)
+    {
+        case CaseDomenru.Data.Roles.Преподаватель: role = "Преподаватель"; break;
+        case CaseDomenru.Data.Roles.Родитель: role = "Родитель"; break;
+        case CaseDomenru.Data.Roles.Ученик: role = "Ученик"; break;
+    }
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,13 +30,13 @@
 		<div class="profile">
 			<div class="avatar" style="background-image: url(img/logo.svg);"></div>
 				<div class="info">
-				<h1 id="FIO">ФИО</h1><p>
-				<h2 id="chclass">4б</h2><p>
-				<h2 id="date">20.06.2020</h2><p>
+                    <h1 id="FIO">@person.LastName @person.FirstName @person.Patronymic</h1><p>
+					<h2 id="chclass">Роль: @role</h2><p>
+					<h2 id="date">Дата рождения: </h2><p>
 				</div>
 		</div>
-		<h1 id="emailTo">hunterevgeha@mail.ru</h1>
-		<a href="index.html" class="button">Выйти</a>
+		<h1 id="emailTo">@NameValidation.idn.GetUnicode(Model.User.Email)</h1>
+		<a asp-controller="Home" asp-action="Index" class="button">Выйти</a>
 	</div>
 </div>
 <script src="js/script.js"></script>
